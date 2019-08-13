@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    #block{
+      position:absolute;
+      left: 200px;
+      top: 200px;
+      width: 100px;
+      height: 100px;
+      background: #0c8;
+      line-height: 100px;
+      text-align: center;
+    }
+  </style>
+  <div id="block">click me</div>
+  <script>
+    var deg = 0;
+    block.addEventListener('click', function(){
+      var self = this;
+      console.error(deg)
+      requestAnimationFrame(function change(){
+        // console.log(deg)
+        self.style.transform = 'rotate(' + (deg++) +'deg)';
+        requestAnimationFrame(change);
+      });
+    });
+  </script>
+</body>
+</html>
